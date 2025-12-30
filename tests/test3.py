@@ -1,6 +1,6 @@
 from textmood import TextMood
 
-MODEL_FILE = "mod.pkl"
+MODEL_FILE = "tests/mod.pkl"
 
 def main():
     model = TextMood()

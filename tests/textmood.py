@@ -107,12 +107,21 @@ class TextMood:
 
     def save_model(self, file_path="model.pkl"):
         state = {
-            'counts': self.counts,
-            'total_feat_count': self.total_feat_count,
-            'docs_per_class': self.docs_per_class,
-            'vocab': self.vocab,
-            'priors': self.priors,
-            'labels': self.labels
+            # Save the logic settings
+            'config': {
+                'stop_words': self.stop_words,
+                'negations': self.negations,
+                'ngram_range': self.ngram_range
+            },
+            # Save the learned data
+            'data': {
+                'counts': self.counts,
+                'total_feat_count': self.total_feat_count,
+                'docs_per_class': self.docs_per_class,
+                'vocab': self.vocab,
+                'priors': self.priors,
+                'labels': self.labels
+            }
         }
         with open(file_path, "wb") as f:
             pickle.dump(state, f)
@@ -120,12 +129,18 @@ class TextMood:
     def load_model(self, file_path="model.pkl"):
         with open(file_path, "rb") as f:
             state = pickle.load(f)
-            self.counts = state['counts']
-            self.total_feat_count = state['total_feat_count']
-            self.docs_per_class = state['docs_per_class']
-            self.vocab = state['vocab']
-            self.priors = state['priors']
-            self.labels = state['labels']
+            # Restore config
+            self.stop_words = state['config']['stop_words']
+            self.negations = state['config']['negations']
+            self.ngram_range = state['config']['ngram_range']
+            # Restore data
+            d = state['data']
+            self.counts = d['counts']
+            self.total_feat_count = d['total_feat_count']
+            self.docs_per_class = d['docs_per_class']
+            self.vocab = d['vocab']
+            self.priors = d['priors']
+            self.labels = d['labels']   
 
 def load_data(data_file_path: str, amount: int, labels: list, separator: str):
     all_samples = []
