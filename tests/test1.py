@@ -6,7 +6,7 @@ stop_words = {"the", "a", "is", "and", "it", "to", "this", "in", "of"}
 negations = {"not", "no", "never", "didnt", "isnt", "wasnt"}
 
 # 2. Load the data 
-formated_dataset = load_data("dataset1.csv", amount=100, labels=target_labels, separator=",")
+formated_dataset = load_data(r"tests\dataset1.csv", amount=101, labels=target_labels, separator=",")
 
 # 3. Initialize the model
 model = TextMood(stop_words=stop_words, negations=negations)
