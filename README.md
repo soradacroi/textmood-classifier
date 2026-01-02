@@ -1,7 +1,6 @@
 Textmood Classifier
 ===================
 
-Dec 2025
 
 I recently started building a tool to detect emotion in text ([github/ai-emotion-detection-py](https://github.com/soradacroi/ai-emotion-detection-py)). As I was looking into implementation I stumbled upon **[naive bayes classifier](https://en.wikipedia.org/wiki/Naive_Bayes_classifier)**. While making the emotion detection I thought to myself why not make a library out of it, I have never made a proper library, but i tried this time... idk what i want to write...  
 So after _finishing_ I made this library. (LIBRARY???????????????)  
