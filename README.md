@@ -54,9 +54,12 @@ N-gram Generation
                     all_features.append(gram)
 
 The n-gram generation works like making two (more depends on your given depth, or just one if u do (1, 1)) one word or token,for example:  
+  
 "i am not very happy" (using the example from _#Negation and Stopwords_)  
 the Negation and Stopwords will generate \[i, am, NOT\_happy\] then,  
+  
 N-gram generator will output something like (if depth is (1, 2)):  
+  
 \[i, am, NOT\_happy, i\_am, am\_NOT\_happy\] increasing the tokens and context. While increasing the depth will increase the context, it will also increase the size of the self.vocab set and the model.pkl file. Also the problem of [overfitting](https://en.wikipedia.org/wiki/Overfitting) comes up, they require significantly larger datasets to avoid overfitting. An ngram\_range of (1, 2) or (1, 3) provides the best balance between understanding context and remaining generalized. _(for me atleast)_
 
 Basic set-up
