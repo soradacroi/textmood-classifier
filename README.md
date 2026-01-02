@@ -33,7 +33,7 @@ Negation and Stopwords
 
 so this "libary" does like how do i explain this...  
 So this library tracks negation words and transform the next word as like an unique word, for example a sentence "hello i am not happy" will get transform like "hello i am NOT\_happy", that way it have some context as multinomial naive bayes is not context aware.
-  
+
 And well the stop words help with the negation like,  
 Let "i am not very happy" be a data, let "very" be a stop word so, after transformation it will be "i am NOT\_happy" very got removed and made "not very happy" mean sad so it can now have more complex data.
 
@@ -106,7 +106,7 @@ Laplace Smoothing
 -----------------
 
     
-    # From your predict function:
+    # From predict function:
     p_feat_given_class = (feat_count_in_class + smooth) / (total_feat_in_class + (vocab_size * smooth))
         
 
