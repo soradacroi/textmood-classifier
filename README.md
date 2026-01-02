@@ -69,7 +69,7 @@ Basic set-up
     
     from textmood import TextMood, load_data
     
-    # 1. Configuration
+    # Configuration
     stop_words={"the", "is", "very"}, 
     negations={"not", "no", "never"},
     ngram_range=(1, 2)
