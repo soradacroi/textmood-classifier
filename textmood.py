@@ -57,7 +57,7 @@ class TextMood:
                     
         return all_features
 
-    def train(self, train_data, labels, verbose=True):
+    def train(self, train_data, labels, verbose=True, print_vocab = False):
         self.labels = labels
         for label in labels:
             self.counts[label] = {}
@@ -79,7 +79,8 @@ class TextMood:
                 self.priors[label] = math.log(self.docs_per_class[label] / total_docs)
             else:
                 self.priors[label] = -1e9
-                
+        if print_vocab == True:
+            print(self.vocab)
         if verbose:
             print(f"Training complete. Vocab size: {len(self.vocab)}")
 
