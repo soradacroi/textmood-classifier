@@ -1,5 +1,4 @@
-# TextMood-Classifier
-
+# nb classifier
 import math
 import random
 import pickle
